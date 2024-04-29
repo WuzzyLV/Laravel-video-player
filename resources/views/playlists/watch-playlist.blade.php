@@ -52,6 +52,9 @@
             $(document).ready(function () {
                 videoSrc.src = videos[0].url;
                 video.load();
+                $('#video').on('loadeddata', function () {
+                    video.play();
+                });
                 videoTitle.innerText = videos[0].title;
                 videoDesc.innerText = videos[0].description;
             });
@@ -61,6 +64,9 @@
                     currentIndex++;
                     videoSrc.src = videos[currentIndex].url;
                     video.load();
+                    $('#video').on('loadeddata', function () {
+                        video.play();
+                    });
                     videoTitle.innerText = videos[currentIndex].title;
                     videoDesc.innerText = videos[currentIndex].description;
                 }
@@ -71,6 +77,9 @@
                     currentIndex--;
                     videoSrc.src = videos[currentIndex].url;
                     video.load();
+                    $('#video').on('loadeddata', function () {
+                        video.play();
+                    });
                     videoTitle.innerText = videos[currentIndex].title;
                     videoDesc.innerText = videos[currentIndex].description;
                 }
@@ -81,6 +90,8 @@
             $('#prev-btn').click(prevVideo);
 
             $('#next-btn').click(nextVideo)
+
+
         </script>
 
     @endif
