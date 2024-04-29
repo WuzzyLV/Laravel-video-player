@@ -48,6 +48,7 @@
             const uploadButton = document.getElementById('upload-btn'); // Select the upload button
 
             form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent the form from submitting
                 const formData = new FormData(form); // Create a FormData object to hold the file
 
                 const xhr = new XMLHttpRequest();
@@ -65,7 +66,7 @@
 
                 // Optional: Handle successful upload
                 xhr.addEventListener('load', () => {
-                    console.log('Upload successful');
+                    uploadButton.innerText = 'Upload successful';
                     setTimeout(() => {
                         uploadButton.innerText = 'Upload';
                     }, 3000);
@@ -77,7 +78,7 @@
                 });
 
                 xhr.open('POST', form.action); // Use the form's action URL
-                // xhr.send(formData);
+                xhr.send(formData);
             });
 
         </script>
