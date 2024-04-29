@@ -22,7 +22,7 @@
         </x-slot>
         <div class="flex justify-center items-center flex-col bg-gray-700 bg-opacity-50">
             <div class="flex-row flex px-24" id="video-container">
-                <video controls id="video" class="w-8/12 flex justify-center">
+                <video controls id="video" class="w-9/12 flex justify-center">
                     <source id="video-src" type="video/mp4">
                 </video>
                 <div class="bg-gray-800 w-full flex flex-col relative">
@@ -58,7 +58,7 @@
             </div>
             <p class="ml-2 mt-2" id="video-desc">{{$video->description}}</p>
         </div>
-    
+
         <script type="module">
             let video = $('#video')[0];
             let videoSrc = $('#video-src')[0];
