@@ -5,13 +5,18 @@
         </h2>
     </x-slot>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center flex-wrap">
         @forelse($videos as $video)
             <div class="card w-96 bg-gray-800 shadow-xl m-6">
                 <div class="card-body">
                     <h2 class="card-title flex justify-between">
                         <div>
-                            {{$video->title}}
+                            @if($video->is_public)
+                                <i class="fa-solid fa-globe mr-2"></i>
+                            @else
+                                <i class="fa-solid fa-lock mr-2 text-red-400"></i>
+                            @endif
+                            {{ $video->title }}
                         </div>
                         <div>
                             {{$video->created_at->diffForHumans()}}
