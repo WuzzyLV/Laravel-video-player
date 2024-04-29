@@ -58,9 +58,7 @@
             </div>
             <p class="ml-2 mt-2" id="video-desc">{{$video->description}}</p>
         </div>
-
-        @vite('resources/js/playlistSorting.js')
-
+    
         <script type="module">
             let video = $('#video')[0];
             let videoSrc = $('#video-src')[0];
