@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\Input;
 
 class FileController extends Controller
 {
-    public static $maxFileSize = 1024 * 100; // 100MB
+    public static $maxFileSize = 1024 * 500; // 100MB
 
     // stores the upload
     public function store(Request $request): RedirectResponse
